@@ -2,10 +2,10 @@
 
 
 :root {
-  --background-color: #5cdb95;
-  --navbar-color: #05386b;
+  --background-color: #546A7B;
+  --navbar-color: #393D3F;
   --text-color: #edf5e1;
-  --active-color: #8ee4af;
+  --active-color: #62929E;
 }
 
 body {
@@ -25,7 +25,7 @@ body {
   list-style-type: none;
   justify-content: flex-end;
   gap: 1.55rem;
-  margin: 20px;
+  margin: 18px;
 }
 
 li a {
@@ -34,8 +34,55 @@ li a {
   font-size: 1.2em;
 }
 
-a:active {
+a {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+a::before,
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+a::before {
+  background-color: var(--active-color);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
   color: var(--active-color);
+}
+
+a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+a span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a:hover span {
+  transform: translate3d(-200%, 0, 0);
 }
 
 /*intro section*/
@@ -46,7 +93,8 @@ a:active {
   align-items: center;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 12rem;
+  padding: 11.4rem;
+  height: auto;
   font-size: 1.25rem;
 }
 
