@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Odibee+Sans&family=Open+Sans:wght@300;400;500&family=Press+Start+2P&family=Roboto+Mono&display=swap");
+
+:root {
+  --background-color: #546a7b;
+  --navbar-color: #393d3f;
+  --text-color: #edf5e1;
+  --active-color: #62929e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+}
+
+/*navbar section*/
+
+.navbar {
+  padding: 0.75rem;
+  background-color: var(--navbar-color);
+}
+
+.right .elements {
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+  gap: 1.55rem;
+  margin: 18px;
+}
+
+li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* LINKS ANIMATIONS */
+
+#links {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#links::before,
+#links::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+#links::before {
+  background-color: var(--active-color);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#links::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: var(--active-color);
+}
+
+#links:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+#links:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+#links span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#links:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+/*intro section*/
+
+.introduction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  height: auto;
+  font-size: 1.25rem;
+}
+
+.intro-box {
+  display: block;
+  position: relative;
+  text-align: left;
+  margin: 12.55rem;
+  margin-top: 3rem;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.things-i-know {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+li img {
+  display: inline-block;
+  padding: 8px;
+  vertical-align: middle;
+}
+
+#download-button {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#download-button {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#download-button::before,
+#download-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+#download-button::before {
+  background-color: var(--active-color );
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#download-button::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  color:var(--text-color);
+}
+
+#download-button:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
