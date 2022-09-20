@@ -109,7 +109,7 @@ img {
 .card {
   max-width: 300px;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 10vh;
   background-color: var(--navbar-color);
   border: 1px solid var(--active-color);
   padding: 8px;
@@ -165,12 +165,12 @@ figure {
 }
 
 .card {
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 .card:hover {
-  -webkit-transform: scale(1.06);
-  transform: scale(1.06);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
 }
